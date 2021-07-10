@@ -1,0 +1,32 @@
+<!--This is my base layout nav bar. -->
+<mat-toolbar color='primary'>
+  <mat-toolbar-row>
+    <div class="logo"></div>
+      <img src="./assets/gpa-calculator-app.png" height="80" />
+    <div style="width: 80%">
+      <div fxLayout="row wrap" fxLayoutAlign="end start">
+        <button mat-button routerLink="/">Home</button>
+        <button mat-button (click)="signOut()">Sign Out</button>
+      </div>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<br />
+
+<!--This is the main card for my base layout which contains the header and then the router outlet. -->
+<div fxLayout="row wrap">
+  <div fxFlex>
+
+    <!--This is my assignment header. -->
+    <mat-card class="main-container">
+      <mat-card-title>{{ assignment }}</mat-card-title>
+      <br /><br />
+
+      <!--This is the main card content which contains a router outlet. -->
+      <mat-card-content>
+        <router-outlet></router-outlet>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
